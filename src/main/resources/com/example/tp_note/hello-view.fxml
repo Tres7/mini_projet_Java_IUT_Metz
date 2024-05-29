@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_note.PizzaController">
+   <children>
+      <Label layoutX="306.0" layoutY="38.0" text="Liste des pizzas">
+         <font>
+            <Font name="Cantarell Bold" size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableau" layoutX="184.0" layoutY="94.0" prefHeight="200.0" prefWidth="399.0">
+         <columns>
+            <TableColumn fx:id="colRecette" prefWidth="98.0" text="Recette" />
+            <TableColumn fx:id="colPrix" prefWidth="116.0" text="Prix" />
+            <TableColumn fx:id="colNombreIngredients" prefWidth="184.0" text="Nombre d'ingrédients" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAjouter" contentDisplay="TOP" layoutX="112.0" layoutY="472.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ajouterPizza" text="Ajouter" textAlignment="CENTER">
+         <effect>
+            <Reflection bottomOpacity="0.14" fraction="0.97" topOpacity="0.31" />
+         </effect>
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSupprimer" layoutX="568.0" layoutY="472.0" mnemonicParsing="false" onAction="#supprimerPizza" text="Supprimer">
+         <effect>
+            <Reflection bottomOpacity="0.14" />
+         </effect></Button>
+      <Button fx:id="btnVider" layoutX="358.0" layoutY="472.0" mnemonicParsing="false" onAction="#viderTableau" text="Vider">
+         <effect>
+            <Reflection bottomOpacity="0.14" fraction="1.0" topOpacity="0.35" />
+         </effect></Button>
+      <GridPane layoutX="177.0" layoutY="362.0" prefHeight="90.0" prefWidth="406.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Recette" />
+            <Label text="Prix" GridPane.rowIndex="1" />
+            <Label text="Nombre d'ingrédients" GridPane.rowIndex="2" />
+            <Label GridPane.rowIndex="3" />
+            <TextField fx:id="inRecette" GridPane.columnIndex="1" />
+            <TextField fx:id="inPrix" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="inNombreIngredients" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Label layoutX="280.0" layoutY="319.0" text="Ajout d'une pizza">
+         <font>
+            <Font name="Cantarell Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="erreurTableVide" layoutX="532.0" layoutY="49.0" prefHeight="35.0" prefWidth="221.0" textFill="#d30909">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
